@@ -8,23 +8,26 @@ body{
 }
 /*Encabezado*/
 header{
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px 50px;
-background: #1a237e;
-color: #fff;
-position: sticky;
-top: 0;
-z-index: 1000;
-}
-/*logo*/
-header .logotipo{
+  background: #003366;
+    color: white;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+ .logotipo-container {
+  display: flex;
+  align-items: center;
+}
+
+.header .logotipo {
+  height: 20px;
+  margin-right: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 header.logotipo img{
-    width: 40px;
+    width: 20px;
     margin-right: 10px;
 }
 header nav ul{
@@ -71,29 +74,73 @@ header nav a{
 .card:hover{
     transform: scale(1.05);
 }
-.btn{
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #3949ab;
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
+.calculadora {
+  max-width: 450px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
-.btn:hover{
-    background: #1a237e;
 
+.calculadora h2 {
+  margin-bottom: 20px;
+  color: #333;
 }
-.calculadora button:hover{
-    background: #1a237e;
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-.resultado{
-    margin-top: 20px;
-    text-align: left;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: inset 0px 3px 6px rgba(0,0,0,0.1);
+
+.formulario input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.btn {
+  background: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #45a049;
+}
+
+.resultado {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.resultado h3, .resultado h4 {
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.resultado-texto {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+.resultado-pasos {
+  font-size: 15px;
+  color: #555;
 }
 /* Footer */
 footer {
