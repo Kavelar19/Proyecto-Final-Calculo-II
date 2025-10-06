@@ -26,9 +26,58 @@
 
   <main class="contenido">
     <h2>Integración Indefinida</h2>
-    <p>Una <b>integral indefinida</b> representa la familia de funciones cuya derivada es la función dada. Se escribe como:</p>
-    <p class="formula">∫ f(x) dx = F(x) + C</p>
+    <section>
+      <h3>¿Qué es una integral indefinida?</h3>
+      <p>La integral indefinida representa la <b>familia de todas las antiderivadas</b> de una función.  
+      Se escribe como:</p>
 
+      <p style="font-weight:700;">\(\displaystyle \int f(x)\,dx = F(x) + C\)</p>
+
+      <p>Donde \(F'(x) = f(x)\) y \(C\) es la <b>constante de integración</b>.  
+      No se evalúa en límites, ya que describe una función general.</p>
+
+      <div class="example">
+        <strong>Propiedades básicas:</strong>
+        <ul>
+          <li>\(\displaystyle \int (f + g)\,dx = \int f\,dx + \int g\,dx\)</li>
+          <li>\(\displaystyle \int c f(x)\,dx = c\int f(x)\,dx\)</li>
+          <li>\(\displaystyle \frac{d}{dx} \left(\int f(x)\,dx\right) = f(x)\)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h3>Ejemplos paso a paso</h3>
+
+      <div class="example">
+        <strong>Ejemplo 1:</strong>  
+        \(\int (2x + 3)\,dx = x^2 + 3x + C\)
+      </div>
+
+      <div class="example">
+        <strong>Ejemplo 2:</strong>  
+        \(\int e^x\,dx = e^x + C\)
+      </div>
+
+      <div class="example">
+        <strong>Ejemplo 3:</strong>  
+        \(\int \cos(x)\,dx = \sin(x) + C\)
+      </div>
+
+      <div class="example">
+        <strong>Ejemplo 4 (potencias):</strong>  
+        \(\int x^n\,dx = \frac{x^{n+1}}{n+1} + C,\quad n \neq -1\)
+      </div>
+    </section>
+
+    <section>
+      <h3>Interpretación geométrica</h3>
+      <p>Una integral indefinida describe un <b>conjunto infinito de curvas</b> que difieren solo en la posición vertical.  
+      Cada valor de \(C\) genera una curva paralela.</p>
+      <div style="margin-top:15px;">
+        <img src="/static/indefinida.png" alt="Curvas con distintas constantes C" width="400" style="border: 2px solid #4CAF50; border-radius: 8px;">
+      </div>
+    </section>
     <h3>Ejemplo:</h3>
     <p>∫ 2x dx = x² + C</p>
 

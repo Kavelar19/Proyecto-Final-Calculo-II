@@ -7,6 +7,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
 <script src="/static/app.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 </head>
 <body>
     <!--Header-->
@@ -158,17 +170,25 @@ Evaluar: \(2\cdot (\tfrac{8}{3}-0)=\tfrac{16}{3}\).
       <!-- Calculadora de Integral Definida -->
 <section class="calculadora">
       <h2>Calculadora de Integral Definida</h2>
-      <input type="text" id="funcionDef" placeholder="Ej: x**2 + 6">
-      <input type="text" id="limiteA" placeholder="Límite inferior a">
-      <input type="text" id="limiteB" placeholder="Límite superior b">
+      <input type="text" id="funcionDef" placeholder="Ej: x**2 + 6" style="width: 40%; margin-right: 10px;">
+      <input type="text" id="limiteA" placeholder="Límite a" style="width: 20%; margin-right: 10px;">
+      <input type="text" id="limiteB" placeholder="Límite b" style="width: 20%; margin-right: 10px;">
+      <br><br>
       <button id="btnCalcularDef" type="button" class="btn">Calcular</button>
 
-      <div class="resultado">
+      <div class="resultado" style="margin-top: 20px; line-height: 1.4; white-space: normal; word-wrap: break-word; max-width: 600px;">
         <h3>Resultado:</h3>
-        <p id="respuestaDef"></p>
+        <p id="respuestaDef" style="word-wrap: break-word; max-width: 600px;"></p>
         <h4>Pasos:</h4>
-        <p id="pasosDef"></p>
+        <div id="math-content" style="margin-top: 10px; max-width: 600px; overflow-wrap: break-word;">{{ pasos|safe }}</div>
       </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          if (window.MathJax) {
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
     </section>
   </main>
     <footer>
